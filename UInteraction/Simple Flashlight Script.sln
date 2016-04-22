@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{CAA527F3-6106-B4B8-5288-451B1FA10DB1}") = "Simple Flashlight Script", "Assembly-CSharp.csproj", "{032CB321-69EF-89B4-ECA3-03C46FCDBF04}"
+EndProject
+Project("{CAA527F3-6106-B4B8-5288-451B1FA10DB1}") = "Simple Flashlight Script", "Assembly-CSharp-Editor.csproj", "{F8A25485-D56C-B04A-99A7-205B1359076F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{032CB321-69EF-89B4-ECA3-03C46FCDBF04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{032CB321-69EF-89B4-ECA3-03C46FCDBF04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{032CB321-69EF-89B4-ECA3-03C46FCDBF04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{032CB321-69EF-89B4-ECA3-03C46FCDBF04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8A25485-D56C-B04A-99A7-205B1359076F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A25485-D56C-B04A-99A7-205B1359076F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A25485-D56C-B04A-99A7-205B1359076F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A25485-D56C-B04A-99A7-205B1359076F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
