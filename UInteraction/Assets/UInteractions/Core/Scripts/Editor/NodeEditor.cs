@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class NodeEditor : EditorWindow
 {
-    private List<Rect> NodeRects = new List<Rect>();
+    private List<Node> Nodes = new List<Node>();
     private Vector2 mousePos;
 
     [MenuItem("Window/Node Editor")]
@@ -15,27 +15,49 @@ public class NodeEditor : EditorWindow
 
     private void OnGUI()
     {
-        Event e = new Event();
+        Event e = Event.current;
         mousePos = e.mousePosition;
 
+        if(e.button == 1 && e.type == EventType.MouseDown)
+        {
+            GenericMenu menu = new GenericMenu();
+            menu.AddItem(new GUIContent("Create Input Node"), false, CreateNode);
+            menu.AddItem(new GUIContent("Create Calculation Node"), false, CreateNode);
+            menu.AddItem(new GUIContent("Create Display Node"), false, CreateNode);
+            menu.ShowAsContext();
+        }
+
         BeginWindows();
-
-        for (int i = 0; i < NodeRects.Count; i++)
+        for (int i = 0; i < Nodes.Count; i++)
         {
-            NodeRects[i] = GUI.Window(i, NodeRects[i], Callback, "New Node");
+            Nodes[i].rect = GUI.Window(i, Nodes[i].rect, Callback, "New Node");
         }
-
-        if(GUI.Button(new Rect(10, 10, 100, 100), "Create Node"))
-        {
-            Rect rect = new Rect(mousePos, new Vector2(100, 100));
-            NodeRects.Add(rect);
-        }
-
         EndWindows();
+    }
+
+    private void CreateNode()
+    {
+        Node node = new Node();
+
+        Rect rect = new Rect(mousePos, new Vector2(100, 100));
+        node.rect = rect;
+
+        Nodes.Add(node);
     }
 
     private void Callback(int id)
     {
         GUI.DragWindow();
     }
+}
+
+[System.Serializable]
+public class Node
+{
+    public Rect rect;
+    public enum NodeTypes
+    {
+        Input, Display, Calculation
+    }
+    public NodeTypes NodeType;
 }
